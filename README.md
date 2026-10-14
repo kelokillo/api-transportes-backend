@@ -28,30 +28,30 @@ El proyecto cumple con todos los requerimientos de la rúbrica de evaluación:
 Si deseas correr este proyecto en tu entorno local, sigue estos pasos:
 
 1. **Clonar el repositorio:**
-   git clone https://github.com/kelokillo/api-transportes-backend.git
-   cd api-transportes-backend
+*   git clone https://github.com/kelokillo/api-transportes-backend.git
+*   cd api-transportes-backend
 
 2. **Crear y activar el entorno virtual:**
-   python -m venv venv
+*   python -m venv venv
    # En Windows:
-   venv\Scripts\activate
+*   venv\Scripts\activate
    # En Mac/Linux:
-   source venv/bin/activate
+*   source venv/bin/activate
 
 3. **Instalar las dependencias:**
-   pip install -r requirements.txt
+*   pip install -r requirements.txt
 
 4. **Configurar las Variables de Entorno:**
 
    Por razones de seguridad, el archivo `.env` no se incluye en este repositorio. Debes crear un archivo `.env` en la raíz del proyecto con la siguiente estructura:
 
-   SECRET_KEY=tu_secret_key_aqui
-   DEBUG=True
-   DB_NAME=nombre_base_datos
-   DB_USER=usuario_bd
-   DB_PASSWORD=clave_bd
-   DB_HOST=localhost
-   DB_PORT=3306
+*   SECRET_KEY=tu_secret_key_aqui
+*   DEBUG=True
+*   DB_NAME=nombre_base_datos
+*   DB_USER=usuario_bd
+*   DB_PASSWORD=clave_bd
+*   DB_HOST=localhost
+*   DB_PORT=3306
 
 5. **Configurar la Base de Datos:**
 
@@ -59,9 +59,8 @@ Si deseas correr este proyecto en tu entorno local, sigue estos pasos:
 
 6. **Aplicar migraciones e iniciar el servidor:**
 
-   python manage.py migrate
-
-   python manage.py runserver
+*   python manage.py migrate
+*   python manage.py runserver
 
 ##  Rutas Principales
 
