@@ -16,10 +16,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.views.generic import RedirectView
+from django.contrib.auth import views as auth_views
+from taller import views
 
 urlpatterns = [
+    # Ruta principal: ahora muestra la página de bienvenida
+    path('', views.bienvenida, name='bienvenida'),
+    
+    # Rutas de Autenticación
+    path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+
+    # Vistas Protegidas
+    path('panel-fbv/', views.panel_funciones, name='panel_fbv'),
+    path('panel-cbv/', views.PanelClases.as_view(), name='panel_cbv'),
+    
+    # Panel de administración
     path('admin/', admin.site.urls),
-    path('', include('taller.urls')), 
-    path('', RedirectView.as_view(url='/api/', permanent=False)),
+    
+    # Los endpoints
+    path('api/', include('taller.urls')), 
 ]

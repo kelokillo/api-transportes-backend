@@ -9,5 +9,6 @@ router.register(r'vehiculos', VehiculoViewSet)
 router.register(r'viajes', ViajeViewSet)
 
 urlpatterns = [
-    path('api/', include(router.urls)),
+    # Dejamos la ruta en blanco porque el prefijo 'api/' ya viene de core/urls.py
+    path('', include(router.urls)),
 ]

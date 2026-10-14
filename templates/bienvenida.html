@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Gestión de Transportes</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            text-align: center;
+            padding: 50px 20px;
+            margin: 0;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 40px;
+        }
+        .contenedor-api {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 30px;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+        .contenedor-api h3 {
+            margin-top: 0;
+            color: #34495e;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .btn-logout {
+            background-color: #e74c3c;
+        }
+        .btn-logout:hover {
+            background-color: #c0392b;
+        }
+        .seccion-usuario {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bienvenido al Sistema de Gestión de Transportes</h1>
+    
+    <div class="contenedor-api">
+        <h3>Accesos Públicos de la API REST</h3>
+        <p style="font-size: 14px; color: #7f8c8d; margin-bottom: 20px;">
+            Explora los endpoints disponibles sin necesidad de iniciar sesión.
+        </p>
+        <a href="/api/conductores/"><button>Ver API Conductores</button></a>
+        <a href="/api/vehiculos/"><button>Ver API Vehículos</button></a>
+        <a href="/api/viajes/"><button>Ver API Viajes</button></a>
+    </div>
+
+    <div class="seccion-usuario">
+        {% if user.is_authenticated %}
+            <!-- Texto simple, pero mucho más grande y en negrita -->
+            <p style="font-size: 26px; color: #2c3e50; margin-bottom: 30px;">
+                ¡Hola, <strong style="color: #3498db; font-size: 32px; text-transform: uppercase;">{{ user.username }}</strong>! Has iniciado sesión.
+            </p>
+            
+            <a href="{% url 'panel_fbv' %}"><button style="background-color: #2ecc71; padding: 12px 25px; font-size: 16px;">Ir al Panel Privado</button></a>
+            
+            <form action="{% url 'logout' %}" method="post" style="margin-top: 15px;">
+                {% csrf_token %}
+                <button type="submit" class="btn-logout">Cerrar Sesión</button>
+            </form>
+        {% else %}
+            <p>Actualmente eres un visitante público.</p>
+            <a href="{% url 'login' %}"><button style="background-color: #2c3e50; padding: 12px 25px; font-size: 16px;">Iniciar Sesión</button></a>
+        {% endif %}
+    </div>
+</body>
+</html>

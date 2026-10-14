@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Error 404 - Ruta no encontrada</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .error-card {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 450px;
+            width: 90%;
+            border-top: 5px solid #e74c3c; /* Borde rojo de error */
+        }
+        h1 {
+            color: #e74c3c;
+            font-size: 40px;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        h3 {
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        .gif-container {
+            margin-bottom: 30px;
+        }
+        .gif-container img {
+            width: 100%;
+            max-width: 150px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="error-card">
+        <h1>404</h1>
+        <h3>¡Te saliste de la ruta!</h3>
+        
+        <!-- Aquí está el GIF desde una URL de internet -->
+        <div class="gif-container">
+            <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnp4M3o5d2dnajh2ZGtldzYyeXM4ajdrbjg5eWRjcmoxbG14NnpwMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2G4flVpbo6RmE/giphy.gif" alt="Vehículo saltando GIF">
+        </div>
+
+        <p>El destino o la página que buscas no existe en este Sistema de Gestión de Transportes.</p>
+
+        <a href="{% url 'bienvenida' %}">
+            <button>← Volver al Inicio</button>
+        </a>
+    </div>
+
+</body>
+</html>
