@@ -42,7 +42,9 @@ Si deseas correr este proyecto en tu entorno local, sigue estos pasos:
    pip install -r requirements.txt
 
 4. **Configurar las Variables de Entorno:**
+
    Por razones de seguridad, el archivo `.env` no se incluye en este repositorio. Debes crear un archivo `.env` en la raíz del proyecto con la siguiente estructura:
+
    SECRET_KEY=tu_secret_key_aqui
    DEBUG=True
    DB_NAME=nombre_base_datos
@@ -52,10 +54,13 @@ Si deseas correr este proyecto en tu entorno local, sigue estos pasos:
    DB_PORT=3306
 
 5. **Configurar la Base de Datos:**
+
    Ejecuta el script SQL adjunto en la entrega oficial (o en tu gestor de BD) para crear la base de datos, el usuario y asignar los privilegios.
 
 6. **Aplicar migraciones e iniciar el servidor:**
+
    python manage.py migrate
+
    python manage.py runserver
 
 ##  Rutas Principales
